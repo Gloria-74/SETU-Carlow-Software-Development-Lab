@@ -2,4 +2,4 @@
 
 Lab Exercises
 
-coded in IntelliJ
+coded in IntelliJ and Visual Studio Code
