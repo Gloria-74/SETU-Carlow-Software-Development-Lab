@@ -17,6 +17,9 @@ public class HotelRoomTest {
         System.out.println("Room " + roomA.getRoomNumber() + " costs " + roomA.getRate() + " Euros");
         System.out.println("Room " + roomB.getRoomNumber() + " costs " + roomB.getRate() + " Euros");
 
+        lab2ap3 roomC = new lab2ap3(202,"Single",90,0);
 
+        System.out.println("Room " + roomC.getRoomType() + " is from Type " + roomC.getRoomType()
+                + ", costs " + roomC.getRate() + " and is " + roomC.getOccupied() + ", which means it is occupied.");
     }
 }
