@@ -5,8 +5,6 @@
 
 package Q2_Q3;
 
-import java.util.ArrayList;
-
 public class SavingsAccountTest {
     public static void main (String[] args) {
 

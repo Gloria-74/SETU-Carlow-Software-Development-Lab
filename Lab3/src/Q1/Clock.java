@@ -8,28 +8,34 @@ package Q1;
 import java.util.Calendar;
 
 public class Clock {
-    Calendar cal =  Calendar.getInstance();
-    Time t = new Time(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+    public static void main(String[]args) {
+        Calendar cal =  Calendar.getInstance();
+        Time t = new Time(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
 
-    private int hour;        // 0 - 23
-    private int minute;      // 0 - 59
-    private int second;      // 0 - 59
-    private int millisecond; // 0 - 1000
+        System.out.println(t.toString());
 
-    //t.tick();
+        long startTime = System.currentTimeMillis();
+        long currentTime = startTime;
+        int oldMin = cal.get(Calendar.MINUTE);
+        int newMin = oldMin;
 
-    // write a loop that calls method tick() every second and then prints the
-    // stored time. The loop (and program) should terminate (= stop) when the stored time
-    // advances to the next minute
-    // Hint: to find out when a second has passed you will need to use
-    // System.currentTimeMillis()
-
-
-    public void setT(Time t) {
-        for (millisecond = 0; millisecond < 1000;) {
+        while (newMin == oldMin) {
+            while ((currentTime - startTime) < 1000) {
+                currentTime = System.currentTimeMillis();
+            }
             t.tick();
-            System.out.println(t);
+            System.out.println(t.toString());
+            newMin = t.getMinute();
+            startTime = System.currentTimeMillis();
+            currentTime = startTime;
         }
 
+        // write a loop that calls method tick() every second and then prints the
+        // stored time. The loop (and program) should terminate (= stop) when the stored time
+        // advances to the next minute
+        // Hint: to find out when a second has passed you will need to use
+        // System.currentTimeMillis()
+
     }
+
 }

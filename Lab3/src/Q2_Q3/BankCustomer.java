@@ -5,28 +5,23 @@
 
 package Q2_Q3;
 
-import java.util.ArrayList;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 // Q3
 public class BankCustomer {
     private String name;
     private String address;
-    private ArrayList<SavingsAccount> bankAccounts = new ArrayList<SavingsAccount>();
+    private SavingsAccountSolution[] bankAccounts = new SavingsAccountSolution[3];
+    private int noAccount;
 
-
+    // Constructor
     public BankCustomer(String name, String address) {
         this.name = name;
         this.address = address;
     }
 
-    public ArrayList<SavingsAccount> getBankAccounts() {
-        return bankAccounts;
-    }
-
-    public void setBankAccounts(ArrayList<SavingsAccount> bankAccounts) {
-        this.bankAccounts = bankAccounts;
-    }
-
+    // Getter & Setter
     public String getName() {
         return name;
     }
@@ -43,6 +38,50 @@ public class BankCustomer {
         this.address = address;
     }
 
+    public SavingsAccountSolution[] getBankAccounts() {
+        return bankAccounts;
+    }
+
+    public void setBankAccounts(SavingsAccountSolution[] bankAccounts) {
+        this.bankAccounts = bankAccounts;
+    }
+
+    public int getNoAccount() {
+        return noAccount;
+    }
+
+    public void setNoAccount(int noAccount) {
+        this.noAccount = noAccount;
+    }
+
+    public void addAccount(SavingsAccountSolution savingsAccountSolution) {
+        if (getNoAccount() <= 2) {
+            this.bankAccounts[getNoAccount()] = savingsAccountSolution;
+            noAccount++;
+        } else {
+            System.out.println("Maximum accounts reached!");
+        }
+    }
+
+    public double balance(SavingsAccountSolution[] savingsAccountSolution) {
+        double totalBalance = 0;
+        for (SavingsAccountSolution sa: savingsAccountSolution) {
+            if (sa != null) {
+                totalBalance += sa.getSavingsBalance();
+            }
+        }
+        return totalBalance;
+    }
+
+    // toString
+
+    @Override
+    public String toString() {
+        return "BankCustomer [" +
+                "name = " + name +
+                ", address = " + address +
+                "]";
+    }
 }
 
 
