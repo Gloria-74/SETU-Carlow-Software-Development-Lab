@@ -18,3 +18,4 @@ else:
     print("Der Nutzer ist volljährig!")
 
 print("Programmende")
+

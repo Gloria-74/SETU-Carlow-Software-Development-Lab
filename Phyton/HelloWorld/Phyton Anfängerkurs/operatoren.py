@@ -27,6 +27,20 @@ print(2.4 * 2) # = 4,8
 
 # Logische Operatoren:
 # and -> gibt true aus wenn beide statements wahr sind
-# or -> gibt true aus wenn ein statement wahr ist
+# or -> gibt true aus wenn ein statement wahr ist oder beide
 # not -> gibt false aus wenn beide statements wahr sind
+
+# Anwendung
+age = int(input("Bitte gib dein Alter ein: "))
+day_of_month = 3
+if age < 18:
+    print("Achtung, der Nutzer ist jünger als 18 Jahre!")
+elif age == 18 and day_of_month == 3:
+    print("Heute ist dein Glückstag, denn du hast in der Lotterie gewonnen!")
+elif age == 18 or day_of_month == 3:
+    print("Heute ist dein Glückstag, denn du hast in der Lotterie gewonnen!")
+else:
+    print("Der Nutzer ist volljährig!")
+
+print("Programmende")
 
